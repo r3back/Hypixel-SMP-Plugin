@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.reb4ck</groupId>
+    <artifactId>SMP-Parent</artifactId>
+    <name>SMP</name>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <minecraft.api.version>1.13</minecraft.api.version>
+    </properties>
+
+    <modules>
+        <module>SMP-Socket</module>
+        <module>SMP-Lobby</module>
+        <module>SMP-API</module>
+        <module>SMP-Bungee</module>
+        <module>SMP-Player</module>
+        <module>SMP-Commons</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>22.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.0.1-jre</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+
+                </executions>
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                    <filters>
+                        <filter>
+                            <artifact>net.wesjd:anvilgui</artifact>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                        </filter>
+                        <filter>
+                            <artifact>io.netty:netty-resolver</artifact>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                        </filter>
+
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/maven/**</exclude>
+                                <exclude>org/bukkit/**</exclude>
+                                <exclude>LICENSE</exclude>
+                                <exclude>META-INF/**/</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                    <relocations>
+                        <relocation>
+                            <pattern>de.tr7zw</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.de.tr7zw</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.cryptomorin.xseries</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.cryptomorin.xseries</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.fasterxml.jackson</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.fasterxml</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.yaml</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.yaml</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.mysql</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.mysql</shadedPattern>
+                        </relocation>
+
+
+                        <relocation>
+                            <pattern>com.zaxxer.hikari</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.zaxxer.hikari</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>io.netty</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.io.netty</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.aopalliance</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.aopalliance</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.apache</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.apache</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.bouncycastle</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.bouncycastle</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.checkerframework</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.checkerframework</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.glassfish</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.glassfish</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.passay</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.passay</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.slf4j</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.slf4j</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.github</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.github</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>net.wesjd.anvilgui</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.anvilgui</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>com.google</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.google</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.reactivestreams</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.reactivestreams</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>io.lettuce</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.io.lettuce</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>redis.clients.jedis</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.jedis</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>reactor</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.reactor</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>google.protobuf</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.google.protobuf</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>javax.annotation</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.javax.annotation</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>javax.inject</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.javax.inject</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>org.json</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.org.json</shadedPattern>
+                        </relocation>
+
+                        <!-- SMP BUKKIT -->
+
+                        <relocation>
+                            <pattern>com.sun.jna</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.com.sun.jna</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>javax.xml.bind</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.javax.xml.bind</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>lib</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.lib</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>mozilla</pattern>
+                            <shadedPattern>me.reb4ck.smp.libs.mozilla</shadedPattern>
+                        </relocation>
+                    </relocations>
+
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <sourceDirectory>src</sourceDirectory>
+    </build>
+
+</project>

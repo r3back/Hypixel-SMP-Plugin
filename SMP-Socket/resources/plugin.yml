@@ -1,0 +1,12 @@
+name: SMPBukkit
+description: SMP Socket Side
+main: me.reb4ck.smp.SocketSMP
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [Rehab]
+softdepend: [Vault, LuckPerms, TokensManager]
+load: POSTWORLD
+commands:
+  smp:
+    aliases: ["smp", "s"]
+    description: SMP main command

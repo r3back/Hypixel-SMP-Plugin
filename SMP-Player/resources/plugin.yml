@@ -1,0 +1,11 @@
+name: SMPBukkit
+description: SMP Player Side
+main: me.reb4ck.smp.PlayerSMP
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [Rehab]
+load: POSTWORLD
+commands:
+  smp:
+    aliases: ["smp", "s"]
+    description: SMP main command

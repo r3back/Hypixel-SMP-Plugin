@@ -1,0 +1,18 @@
+package me.reb4ck.smp.base.user;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import me.reb4ck.smp.api.user.SMPUser;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public final class SMPOwner implements SMPUser {
+    private String uuid;
+    private List<String> servers;
+}

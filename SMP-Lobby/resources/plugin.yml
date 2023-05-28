@@ -1,0 +1,11 @@
+name: SMPBukkit
+description: SMP Lobby Side
+main: me.reb4ck.smp.LobbySMP
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [Rehab]
+load: POSTWORLD
+commands:
+  smp:
+    aliases: ["smp", "s"]
+    description: SMP main command

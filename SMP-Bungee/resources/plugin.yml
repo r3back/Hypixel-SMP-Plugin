@@ -1,0 +1,7 @@
+name: SMPBungee
+description: SMP Bungee Side
+main: me.reb4ck.smp.BungeeSMP
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [Rehab]
+load: POSTWORLD

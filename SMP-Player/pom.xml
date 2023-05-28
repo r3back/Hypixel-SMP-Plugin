@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>me.reb4ck</groupId>
+        <artifactId>SMP-Parent</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <groupId>me.reb4ck</groupId>
+    <artifactId>SMP-Player</artifactId>
+    <version>1.0</version>
+
+    <name>SMP-Player</name>
+    <packaging>jar</packaging>
+
+    <repositories>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Spigot -->
+        <dependency>
+            <groupId>org.spigot</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.17</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../../libs/spigots/spigot-1.16.5.jar</systemPath>
+        </dependency>
+        <!-- Commons -->
+        <dependency>
+            <groupId>me.reb4ck</groupId>
+            <artifactId>SMP-Commons</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- API -->
+        <dependency>
+            <groupId>me.reb4ck</groupId>
+            <artifactId>SMP-API</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- PlaceholderAPI -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
